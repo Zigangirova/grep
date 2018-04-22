@@ -7,12 +7,12 @@ import java.util.regex.Pattern;
 
 public class Grep {
 
-    public static boolean param_i = false;
-    public static boolean param_r = false;
-    public static boolean param_v = false;
-    public static String word = "";
+    boolean param_i = false;
+    boolean param_r = false;
+    boolean param_v = false;
+    String word = "";
 
-    public static void main(String[] args) {
+    public void main(String[] args) {
 
         if (args.length < 2) {
             System.out.println("Недостаточно аргументов");
@@ -42,7 +42,7 @@ public class Grep {
         }
     }
 
-    public static void config(String[] args) {
+    void config(String[] args) {
         int index;
         for (index = 0; index < args.length - 1; index++) {
             char switcher = args[index].charAt(0);
@@ -68,7 +68,7 @@ public class Grep {
         }
     }
 
-    public static String filter(String strLine, String word) {
+    String filter(String strLine, String word) {
         String checker = strLine;
         String returnStr = null;
         if (!param_r) {
